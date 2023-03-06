@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Traits;
+
+trait WithMediaManager
+{
+    public function showFileManager(string $id, ?string $file = null, array $metadata = [])
+    {
+        $this->emitTo('media-manager', 'media-manager:show', [
+            'id' => $id,
+            'file' => $file,
+            'metadata' => $metadata,
+        ]);
+    }
+
+    public function removeFileFromMediaManager()
+    {
+        $this->emitTo('media-manager', 'media-manager:file-removed');
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace [namespace];
+
+use Livewire\Component;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Database\Eloquent\Model;
+
+class [class] extends Component
+{
+    public $model = Model::class;
+
+    public function render(): View
+    {
+        return view('[view]');
+    }
+}
